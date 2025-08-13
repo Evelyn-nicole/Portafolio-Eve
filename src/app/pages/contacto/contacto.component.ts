@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+@Component({
+  selector: 'app-contacto',
+  standalone: true,
+  imports: [RouterModule],   // Muy importante
+  templateUrl: './contacto.component.html',
+  styleUrl: './contacto.component.scss'
+})
+export class ContactoComponent {
+
+}

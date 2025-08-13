@@ -1,0 +1,326 @@
+.sobre-mi {
+  padding: 4rem 2rem;
+  background-color: #f7f7f7;
+
+  .contenido {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .foto img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .texto {
+      flex: 1;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .botones {
+        display: flex;
+        gap: 1rem;
+
+        a {
+          background-color: #183aaadf;
+          padding: 0.8rem 2rem;
+          color: white;
+          font-weight: bold;
+          border-radius: 4px;
+          text-decoration: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &.secondary {
+            background-color: #444;
+            &:hover {
+              background-color: #666;
+            }
+          }
+
+          &:hover {
+            background-color: #2354f5cc;
+          }
+        }
+      }
+    }
+  }
+
+  .timeline.horizontal {
+  max-width: 100%;
+  overflow-x: auto; /* scroll horizontal en pantallas pequeñas */
+  padding: 2rem 1rem 3rem;
+
+/* Estilo unificado para todos los títulos de sección */
+h2, h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #000000;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
+  .timeline-container {
+    display: flex;
+    gap: 3rem;
+    border-left: none;
+    border-bottom: 3px solid #dd06b6df;
+    padding-left: 0;
+    padding-bottom: 1rem;
+    position: relative;
+    min-width: 700px; /* mínimo ancho para mostrar horizontal */
+  }
+
+  .evento {
+    position: relative;
+    padding-left: 0;
+    padding-bottom: 0;
+    flex: 0 0 245px; /* ancho fijo para cada evento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* circulo linea tiempo */
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: #f728d1df;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -12px; 
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .content {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      text-align: center;
+
+      .year {
+        font-weight: bold;
+        color: #000000df;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        display: block;
+      }
+
+      /*Texto caja linea tiempo */
+      p {
+        margin: 0;
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/* Responsive para móvil: scroll horizontal y menor ancho */
+@media (max-width: 768px) {
+  .timeline.horizontal {
+    .timeline-container {
+      min-width: 100%;
+      gap: 2rem;
+    }
+    .evento {
+      flex: 0 0 180px;
+      .content {
+        font-size: 0.9rem;
+      }
+      .circle {
+        width: 16px;
+        height: 16px;
+        bottom: -10px;
+      }
+    }
+  }
+}
+}
+
+
+
+
+
+
+// Seccion habilidades
+.habilidades-section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.habilidades-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Grilla uniforme */
+.habilidades-grid.uniform {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tarjeta */
+.habilidad {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 160px;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.habilidad:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background-color: #f0f4ff;
+}
+
+/* Icono */
+.habilidad img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+/* Texto */
+.habilidad p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Categoría */
+.categoria-label {
+  font-size: 0.7rem;
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+// VALORES Y FORTALEZAS
+.fortalezas-rediseño {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #000000;
+  }
+
+  .fortalezas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+
+    .fortaleza-card {
+      background: #fff;
+      border: 2px solid #dbe4ff;
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+
+      span {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: #a2c0ff;
+        background: #eef4ff;
+      }
+    }
+  }
+}
+
+
+
+
+
+// OBJETIVO PROFESIONAL
+.objetivo-profesional {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #000000;
+  }
+
+  .objetivo-box {
+    background: #f4f6fc;
+    padding: 2rem;
+    border-left: 6px solid #a2c0ff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.01);
+      background: #e7efff;
+    }
+  }
+}

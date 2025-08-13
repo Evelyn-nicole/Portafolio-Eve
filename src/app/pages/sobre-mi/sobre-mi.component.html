@@ -1,0 +1,96 @@
+<div class="sobre-mi">
+  <div class="contenido" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+    <div class="foto" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+      <img src="/assets/perfil.jpg" alt="Foto de Evelyn" />
+    </div>
+
+
+    <!-- TEXTO SOBRE MI -->
+    <div class="texto" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
+      <h2>Sobre mí</h2>
+      <p>
+        Hola, Soy Evelyn. Ingeniera en Prevención de Riesgos con experiencia en proyectos eléctricos y mineros. Hace
+        algunos años decidí dar un giro a mi vida profesional y adentrarme en el desarrollo web, un mundo que me cautivó
+        por su
+        lógica, creatividad y constante evolución. Hoy ocupo un rol administrativo gestionando procesos académicos y
+        coordinando equipos, donde he fortalecido habilidades como la gestión, planificación y resolución de
+        problemas.
+      </p>
+
+      <p>
+        Me formé como Analista en Programación y sigo profundizando mis conocimientos a través de proyectos personales y
+        formación continua. Creo en el aprendizaje constante, en la colaboración y en nunca dejar de intentar. Busco mi
+        primera oportunidad en el mundo TI, motivada por aportar con compromiso, visión y muchas ganas de crecer.
+      </p>
+
+      <!-- Botones CV -->
+      <div class="botones">
+        <a class="btn-cv secondary" href="/assets/cv.pdf" target="_blank">Ver CV 👁</a>
+        <a class="btn-cv" href="/assets/cv.pdf" download>Descargar CV ⬇️</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- LÍNEA DE TIEMPO HORIZONTAL -->
+  <div class="timeline horizontal" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+    <h2>Linea de Tiempo</h2>
+    <div class="timeline-container">
+      <div class="evento" *ngFor="let item of timeline" data-aos="zoom-in" data-aos-duration="800">
+        <span class="circle"></span>
+        <div class="content">
+          <span class="year">{{ item.year }}</span>
+          <p>{{ item.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Seccion habilidades -->
+  <section class="habilidades-section" data-aos="fade-up">
+    <h2>Habilidades Destacadas</h2>
+    <div class="habilidades-grid uniform">
+      <div class="habilidad" *ngFor="let item of habilidades; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="(i % 3) * 100">
+        <span class="categoria-label">{{ item.categoria }}</span>
+        <img [src]="item.icono" [alt]="item.nombre" />
+        <p>{{ item.nombre }}</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<!-- VALORES Y FORTALEZAS -->
+<section class="fortalezas-rediseño" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+  <h2>Mis valores y fortalezas</h2>
+  
+  <div class="fortalezas-grid">
+    <!-- Recorremos el array fortalezas y generamos una tarjeta por cada elemento -->
+    <div class="fortaleza-card" *ngFor="let fortaleza of fortalezas">
+      <span>{{ fortaleza.icono }}</span>
+      <p>{{ fortaleza.texto }}</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- OBJETIVO PROFESIONAL -->
+  <section class="objetivo-profesional" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+    <h2>Mi objetivo profesional</h2>
+    <div class="objetivo-box">
+      <p>
+        Deseo integrarme a un equipo donde pueda seguir aprendiendo, aportar con mis habilidades y crecer
+        profesionalmente. Busco una oportunidad como trainee o practicante en el área de desarrollo de software, donde
+        pueda aplicar lo aprendido, potenciar mis fortalezas y avanzar en mi camino dentro del mundo TI.
+      </p>
+    </div>
+  </section>

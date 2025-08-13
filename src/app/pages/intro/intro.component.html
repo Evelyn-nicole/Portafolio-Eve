@@ -1,0 +1,15 @@
+<div class="intro-bg">
+  <div class="overlay">
+    <!-- Título con aparición letra por letra -->
+    <h1 class="name" [attr.aria-label]="nombrePrincipal">
+      <span *ngFor="let ch of nombreChars; index as i" [style.animationDelay.ms]="i * 80">
+        {{ ch }}
+      </span>
+    </h1>
+
+    <!-- Subtítulo con efecto máquina de escribir -->
+    <h2 class="subtitle" aria-live="polite">{{ typedText }}</h2>
+
+    <button class="btn-enter" [routerLink]="['/sobre-mi']">Explorar portafolio</button>
+  </div>
+</div>

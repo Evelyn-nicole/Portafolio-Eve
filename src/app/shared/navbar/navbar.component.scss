@@ -1,0 +1,42 @@
+.navbar {
+  width: 100%;
+  background: rgba(1, 0, 10, 0.881); // fondo oscuro semi-transparente
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(1px); // efecto difuminado de fondo
+  border-bottom: 1px solid rgba(255, 255, 255, 0.726);
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    color: #f3f3f3;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ff1c1c;
+      }
+    }
+  }
+}
