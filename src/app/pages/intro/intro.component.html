@@ -1,15 +1,45 @@
 <div class="intro-bg">
+  <!-- Canvas para efecto Matrix solo en Intro -->
+  <canvas id="matrix"></canvas>
+
   <div class="overlay">
-    <!-- Título con aparición letra por letra -->
-    <h1 class="name" [attr.aria-label]="nombrePrincipal">
-      <span *ngFor="let ch of nombreChars; index as i" [style.animationDelay.ms]="i * 80">
-        {{ ch }}
-      </span>
-    </h1>
+    <div class="intro-content">
+      <!-- Lado izquierdo: texto + botón -->
+      <div class="intro-text">
+        <h1 class="name" [attr.aria-label]="nombrePrincipal">
+          <ng-container *ngFor="let ch of nombreChars; index as i">
+            <span *ngIf="ch !== '' && ch !== ' '" [style.animationDelay.ms]="i * 80">
+              {{ ch }}
+            </span>
+            <span *ngIf="ch === ' '">&nbsp;</span>
+          </ng-container>
+        </h1>
 
-    <!-- Subtítulo con efecto máquina de escribir -->
-    <h2 class="subtitle" aria-live="polite">{{ typedText }}</h2>
+        <h2 class="subtitle">Desarrolladora Full Stack Jr.</h2>
+        <p class="mini-intro">
+          Aprendiz constante, resiliente y entusiasta, en busca de mi primera experiencia profesional en TI.
+        </p>
 
-    <button class="btn-enter" [routerLink]="['/sobre-mi']">Explorar portafolio</button>
+        <button class="btn-enter" [routerLink]="['/sobre-mi']">Explorar portafolio</button>
+      </div>
+
+      <!-- Lado derecho: foto -->
+      <div class="intro-image">
+        <img src="assets/mi-foto.png" alt="Foto Evelyn" />
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- Sección de Habilidades separada -->
+<section class="habilidades-section" data-aos="fade-up">
+  <h2>SKILLS</h2>
+  <div class="habilidades-grid uniform">
+    <div class="habilidad" *ngFor="let item of habilidades; let i = index" data-aos="fade-up"
+      [attr.data-aos-delay]="(i % 3) * 100">
+      <!-- <span class="categoria-label">{{ item.categoria }}</span> -->
+      <img [src]="item.icono" [alt]="item.nombre" />
+      <p>{{ item.nombre }}</p>
+    </div>
+  </div>
+</section>

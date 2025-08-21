@@ -1,13 +1,53 @@
-.intro-bg {
-  position: relative;
-  height: 100vh;
+/* Contenedor principal del contenido */
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  background-image: url('/assets/fondo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* importante para responsivo */
 }
 
+
+/* Lado izquierdo: texto y botón */
+.intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center; /* alineado a la izquierda */
+}
+
+/* Lado derecho: imagen */
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px; /* evita que se compriman demasiado */
+}
+
+.intro-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px; /* opcional, bordes redondeados */
+  // box-shadow: 0 0 20px rgba(140, 7, 98, 0.486); /* un toque de glow */
+}
+
+.intro-bg {
+  position: relative;
+  width: 100%;
+  height: auto; /* cambia 100vh por auto */
+  min-height: 80vh; /* suficiente para Intro */
+  overflow: hidden;
+  background-color: rgba(17,16,16,0.6); /* fondo negro semitransparente por si tarda canvas */
+}
+
+
+/* Overlay (texto y botón) */
 .overlay {
   position: absolute;
   inset: 0;
@@ -16,87 +56,221 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: rgb(214, 209, 209);
-  background-color: rgba(17, 16, 16, 0.78);
+  color: #ffffff;
+  background-color: rgba(17, 16, 16, 0.6);
   padding: 0 1.25rem;
+  z-index: 2;
 }
 
-/* Título: letras animadas en cascada */
+
+/* Letras animadas del título */
 .name {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-weight: 900;
-  /* responsive sin media queries */
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   letter-spacing: 0.06em;
   margin-bottom: 1rem;
   line-height: 1.1;
+}
 
-  span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-    animation: rise 600ms ease-out forwards;
-    will-change: transform, opacity;
-  }
+/* Espacios entre palabras */
+.name span {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  animation: rise 600ms ease-out forwards;
+  will-change: transform, opacity;
+  color: #ffffff;
+  z-index: 3;
+  -webkit-text-stroke: 1px #090590;
+  text-shadow: 0 0 4px #2178d5d1, 0 0 8px #2178d5d1;
+}
+
+.name span.space {
+  opacity: 1; /* siempre visible */
+  transform: none;
+  text-shadow: none;
 }
 
 @keyframes rise {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Subtítulo (texto tipeado) */
+/* Subtítulo */
 .subtitle {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+  margin-top: 1rem;
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Tamaño fluido */
   font-weight: 600;
-  color: #f0f0f0;
-  min-height: 1.8em; /* evita saltos mientras escribe */
+  color: #ffffff;
+  text-shadow: 
+    0 0 4px rgba(0, 150, 255, 0.6),   /* Brillo suave */
+    0 0 8px rgba(0, 150, 255, 0.4);   /* Glow más difuso */
   position: relative;
+  z-index: 3;
 }
 
-/* Cursor que parpadea */
-.subtitle::after {
-  content: "";
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  margin-left: 6px;
-  background: currentColor;
-  animation: blink 1s steps(2, start) infinite;
-  vertical-align: -0.15em;
+/* Mini intro */
+.mini-intro {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem); /* Un poquito más chico que el subtítulo */
+  font-weight: 400; /* Más liviano para diferenciar */
+  color: #f0f0f0;   /* Blanco menos intenso */
+  text-shadow: 
+    0 0 3px rgba(0, 150, 255, 0.5);  /* Glow más tenue */
+  position: relative;
+  z-index: 3;
 }
 
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
+
 
 /* Botón */
 .btn-enter {
-  background-color: #ff1c1c;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 800;
+  position: relative;
+  background-color: #04072ea3; /* fondo azul oscuro */
   color: #fff;
-  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 1rem 2.8rem;
+  border: 1px solid transparent; /* necesario para el borde animado */
+  border-radius: 15px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  box-shadow: 0 10px 25px rgba(255, 28, 28, 0.25);
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-  &:hover {
-    background-color: #ff4c4c;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(255, 76, 76, 0.35);
+/* Pseudo-elemento para borde neón animado */
+.btn-enter::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* cubre todo el botón */
+  border-radius: 15px; /* mismo que el botón */
+  padding: 4px; /* grosor del borde */
+  background: linear-gradient(45deg, #ff69b4, #00ffff, #9b30ff, #ff69b4, #00ffff, #9b30ff);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: neonBorder 5s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-sizing: border-box;
+}
+
+/* Animación del borde */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow al pasar el mouse */
+.btn-enter:hover {
+  box-shadow: 0 0 12px rgba(255,105,180,0.7), 0 0 24px rgba(0,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+.btn-enter:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(255,105,180,0.5), 0 0 12px rgba(0,255,255,0.3);
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------------- HABILIDADES ---------------- */
+.habilidades-section {
+  background-color: rgba(8, 8, 41, 0.667); /* fondo negro semitransparente */
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.habilidades-section h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.habilidades-grid.uniform {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* columnas más pequeñas */
+  gap: 1.5rem; /* menos espacio entre cartas */
+  justify-items: center;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.habilidad {
+  background: #6be6ef7b; /* azul semitransparente */
+  border-radius: 1rem;
+  padding: 0.8rem; /* menos padding */
+  width: 100%;
+  max-width: 140px; /* más compacto */
+  height: 150px; /* menos alto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f6f6f6;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.habilidad:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+  background-color: #001f3f;
+}
+
+.habilidad img {
+  width: 40px; /* más pequeño */
+  height: 40px;
+  margin-bottom: 0.4rem;
+}
+
+.habilidad p {
+  font-size: 0.85rem; /* letra más pequeña */
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
   }
 
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 8px 20px rgba(255, 76, 76, 0.3);
+  .intro-image {
+    margin-top: 2rem;
+  }
+
+  .habilidades-grid.uniform {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* aún más compacto en móvil */
+    gap: 1rem;
+  }
+
+  .habilidad {
+    max-width: 120px;
+    height: 130px;
+    padding: 0.6rem;
+  }
+
+  .habilidad img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .habilidad p {
+    font-size: 0.8rem;
   }
 }
