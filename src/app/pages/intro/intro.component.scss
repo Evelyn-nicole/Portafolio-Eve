@@ -197,14 +197,15 @@
 
 .habilidades-section h2 {
   color: #ffffff;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .habilidades-grid.uniform {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* columnas más pequeñas */
-  gap: 1.5rem; /* menos espacio entre cartas */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
   justify-items: center;
   align-items: stretch;
   max-width: 1000px;
@@ -212,18 +213,47 @@
 }
 
 .habilidad {
-  background: #6be6ef7b; /* azul semitransparente */
+  position: relative; /* necesario para pseudo-elemento */
+  background: #1097b693; /* azul oscuro base */
   border-radius: 1rem;
-  padding: 0.8rem; /* menos padding */
+  padding: 0.8rem;
   width: 100%;
-  max-width: 140px; /* más compacto */
-  height: 150px; /* menos alto */
+  max-width: 140px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #f6f6f6;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  overflow: hidden; /* para que el borde no sobresalga */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Pseudo-elemento para borde neón animado */
+.habilidad::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 3px; /* grosor del borde */
+  background: linear-gradient(45deg, #ff69b4, #00ffff, #9b30ff, #ff69b4, #00ffff, #9b30ff);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: neonBorder 5s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-sizing: border-box;
+}
+
+/* Animación del borde */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .habilidad:hover {
@@ -233,29 +263,21 @@
 }
 
 .habilidad img {
-  width: 40px; /* más pequeño */
+  width: 40px;
   height: 40px;
   margin-bottom: 0.4rem;
 }
 
 .habilidad p {
-  font-size: 0.85rem; /* letra más pequeña */
+  font-size: 0.85rem;
   font-weight: 600;
   margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .intro-content {
-    flex-direction: column;
-  }
-
-  .intro-image {
-    margin-top: 2rem;
-  }
-
   .habilidades-grid.uniform {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* aún más compacto en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
   }
 
