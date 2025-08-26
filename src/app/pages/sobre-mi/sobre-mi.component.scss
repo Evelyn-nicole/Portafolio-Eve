@@ -1,653 +1,371 @@
-// .sobre-mi {
-//   padding: 4rem 2rem;
-//   background-color: #f7f7f7;
 
-//   .contenido {
-//     display: flex;
-//     gap: 2rem;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     flex-wrap: wrap;
-//     align-items: center;
-
-//     .foto img {
-//       width: 300px;
-//       height: 300px;
-//       object-fit: cover;
-//       border-radius: 50%;
-//       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-//       flex-shrink: 0;
-//     }
-
-//     .texto {
-//       flex: 1;
-
-//       h2 {
-//         font-size: 2.5rem;
-//         margin-bottom: 1rem;
-//         color: #333;
-//       }
-
-//       p {
-//         font-size: 1.2rem;
-//         color: #555;
-//         line-height: 1.6;
-//         margin-bottom: 1rem;
-//       }
-
-//       .botones {
-//         display: flex;
-//         gap: 1rem;
-
-//         a {
-//           background-color: #183aaadf;
-//           padding: 0.8rem 2rem;
-//           color: white;
-//           font-weight: bold;
-//           border-radius: 4px;
-//           text-decoration: none;
-//           cursor: pointer;
-//           transition: background-color 0.3s ease;
-
-//           &.secondary {
-//             background-color: #444;
-//             &:hover {
-//               background-color: #666;
-//             }
-//           }
-
-//           &:hover {
-//             background-color: #2354f5cc;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .timeline.horizontal {
-//   max-width: 100%;
-//   overflow-x: auto; /* scroll horizontal en pantallas pequeñas */
-//   padding: 2rem 1rem 3rem;
-
-// /* Estilo unificado para todos los títulos de sección */
-// h2, h3 {
-//   text-align: center;
-//   margin-bottom: 2rem;
-//   color: #000000;
-//   font-weight: bold;
-//   font-size: 2rem;
-// }
-
-
-//   .timeline-container {
-//     display: flex;
-//     gap: 3rem;
-//     border-left: none;
-//     border-bottom: 3px solid #dd06b6df;
-//     padding-left: 0;
-//     padding-bottom: 1rem;
-//     position: relative;
-//     min-width: 700px; /* mínimo ancho para mostrar horizontal */
-//   }
-
-//   .evento {
-//     position: relative;
-//     padding-left: 0;
-//     padding-bottom: 0;
-//     flex: 0 0 245px; /* ancho fijo para cada evento */
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-
-//     /* circulo linea tiempo */
-//     .circle {
-//       width: 20px;
-//       height: 20px;
-//       background-color: #f728d1df;
-//       border-radius: 50%;
-//       position: absolute;
-//       bottom: -12px; 
-//       left: 50%;
-//       transform: translateX(-50%);
-//       z-index: 1;
-//     }
-
-//     .content {
-//       background: white;
-//       padding: 1rem;
-//       border-radius: 6px;
-//       box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-//       text-align: center;
-
-//       .year {
-//         font-weight: bold;
-//         color: #000000df;
-//         margin-bottom: 0.5rem;
-//         font-size: 1.2rem;
-//         display: block;
-//       }
-
-//       /*Texto caja linea tiempo */
-//       p {
-//         margin: 0;
-//         color: #444;
-//         font-size: 1rem;
-//         line-height: 1.4;
-//       }
-//     }
-//   }
-// }
-
-// /* Responsive para móvil: scroll horizontal y menor ancho */
-// @media (max-width: 768px) {
-//   .timeline.horizontal {
-//     .timeline-container {
-//       min-width: 100%;
-//       gap: 2rem;
-//     }
-//     .evento {
-//       flex: 0 0 180px;
-//       .content {
-//         font-size: 0.9rem;
-//       }
-//       .circle {
-//         width: 16px;
-//         height: 16px;
-//         bottom: -10px;
-//       }
-//     }
-//   }
-// }
-// }
-
-
-
-
-
-
-// // Seccion habilidades
-// .habilidades-section {
-//   padding: 3rem 1rem;
-//   text-align: center;
-// }
-
-// .habilidades-section h2 {
-//   font-size: 2rem;
-//   margin-bottom: 2rem;
-// }
-
-// /* Grilla uniforme */
-// .habilidades-grid.uniform {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-//   gap: 2rem;
-//   justify-items: center;
-//   align-items: stretch;
-//   max-width: 1100px;
-//   margin: 0 auto;
-// }
-
-// /* Tarjeta */
-// .habilidad {
-//   background: #fff;
-//   border-radius: 1rem;
-//   padding: 1rem;
-//   width: 100%;
-//   max-width: 160px;
-//   height: 180px;
-//   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-// }
-
-// .habilidad:hover {
-//   transform: scale(1.05);
-//   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-//   background-color: #f0f4ff;
-// }
-
-// /* Icono */
-// .habilidad img {
-//   width: 48px;
-//   height: 48px;
-//   margin-bottom: 0.5rem;
-// }
-
-// /* Texto */
-// .habilidad p {
-//   font-size: 0.9rem;
-//   font-weight: 600;
-//   margin: 0;
-// }
-
-// /* Categoría */
-// .categoria-label {
-//   font-size: 0.7rem;
-//   background-color: #e0e0e0;
-//   color: #333;
-//   padding: 0.2rem 0.5rem;
-//   border-radius: 1rem;
-//   margin-bottom: 0.5rem;
-//   text-transform: uppercase;
-//   font-weight: 500;
-// }
-
-
-
-
-
-
-
-// // VALORES Y FORTALEZAS
-// .fortalezas-rediseño {
-//   max-width: 1000px;
-//   margin: 4rem auto;
-//   padding: 0 2rem;
-
-//   h2 {
-//     text-align: center;
-//     margin-bottom: 2rem;
-//     font-size: 2rem;
-//     color: #000000;
-//   }
-
-//   .fortalezas-grid {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//     gap: 1.5rem;
-//     justify-content: center;
-
-//     .fortaleza-card {
-//       background: #fff;
-//       border: 2px solid #dbe4ff;
-//       border-radius: 16px;
-//       padding: 1.5rem 1rem;
-//       text-align: center;
-//       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-//       transition: all 0.3s;
-
-//       span {
-//         font-size: 2rem;
-//         display: block;
-//         margin-bottom: 0.8rem;
-//       }
-
-//       p {
-//         font-size: 1.1rem;
-//         font-weight: 600;
-//         color: #333;
-//       }
-
-//       &:hover {
-//         transform: translateY(-5px);
-//         border-color: #a2c0ff;
-//         background: #eef4ff;
-//       }
-//     }
-//   }
-// }
-
-
-
-
-
-// // OBJETIVO PROFESIONAL
-// .objetivo-profesional {
-//   max-width: 800px;
-//   margin: 4rem auto;
-//   padding: 0 2rem;
-
-//   h2 {
-//     text-align: center;
-//     margin-bottom: 2rem;
-//     font-size: 2rem;
-//     color: #000000;
-//   }
-
-//   .objetivo-box {
-//     background: #f4f6fc;
-//     padding: 2rem;
-//     border-left: 6px solid #a2c0ff;
-//     border-radius: 12px;
-//     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-//     text-align: justify;
-//     font-size: 1.1rem;
-//     line-height: 1.7;
-//     transition: transform 0.3s;
-
-//     &:hover {
-//       transform: scale(1.01);
-//       background: #e7efff;
-//     }
-//   }
-// }
-
-
+/* Sección sobre mí */
 .sobre-mi {
   position: relative;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.622);
   color: #fff;
   padding: 4rem 2rem;
   overflow: hidden;
+}
 
-  /* Canvas para efecto Matrix azul */
-  canvas#matrix-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.4;
-    /* lo dejamos más transparente */
-  }
+/* Canvas para efecto Matrix azul */
+.sobre-mi canvas#matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
 
-  /* Overlay negro translúcido encima del canvas */
-  #sobre-mi::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(34, 180, 27, 0.027);
-    /* oscurece un poco */
-    z-index: 1;
-  }
+/* Overlay negro translúcido encima del canvas */
+#sobre-mi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 180, 27, 0.027);
+  z-index: 1;
+}
 
-  /* Contenido sobre el fondo */
-  #sobre-mi .contenido {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #e0f0ff;
-    /* azul muy suave */
-  }
+/* Contenido sobre el fondo */
+.sobre-mi .contenido {
+  position: relative;
+  z-index: 2;
+  color: #e0f0ff;
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-  .contenido {
-    display: flex;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    color: #cce0ff;
+/* Foto */
+.sobre-mi .foto img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #00ffff, 0 0 15px #ff00ff, 0 0 10px #00ffff; /* glow */
 
-    .foto img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
-      flex-shrink: 0;
-    }
+  flex-shrink: 0;
+}
 
-    .texto {
-      flex: 1;
+/* Texto */
+.sobre-mi .texto {
+  flex: 1;
+  text-align: justify;  /* <- Justificado */
+}
 
-      h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #ffffff; // azul neon
-      }
+.sobre-mi .texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-align: center;
+  // text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; /* título con glow */
 
-      p {
-        font-size: 1.2rem;
-        color: #ffffff; // azul suave
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-    }
-  }
+}
 
+.sobre-mi .texto p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  background: rgba(0, 2, 24, 0.6); /* fondo negro translúcido */
+  padding: 1rem;
+  border-radius: 10px;
+}
 
+.sobre-mi .texto .botones {
+   /* centra los botones */
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* espacio entre los botones */
+}
 
-  /* Botones CV */
-  .btn-enter {
-    position: relative;
-    background-color: #04072e71;
-    /* fondo azul oscuro */
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.1rem;
-    padding: 1rem 2.8rem;
-    border: 1px solid transparent;
-    /* necesario para el borde animado */
-    border-radius: 15px;
-    cursor: pointer;
-    z-index: 1;
-    overflow: hidden;
-    transition: all 0.5s ease;
-  }
+/* Botones CV */
+.btn-enter {
+  position: relative;
+  background-color: #04072e71;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 1rem 2.8rem;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
 
-  /* Pseudo-elemento para borde neón animado */
-  .btn-enter::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* cubre todo el botón */
-    border-radius: 15px;
-    /* mismo que el botón */
-    padding: 4px;
-    /* grosor del borde */
-    background: linear-gradient(45deg, #f04198b5, #64ecec, #9b30ff, #f566ad, #00ffff, #9b30ff);
-    background-size: 600% 600%;
-    z-index: -1;
-    animation: neonBorder 5s linear infinite;
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    box-sizing: border-box;
-  }
+.btn-enter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 4px;
+  background: linear-gradient(45deg, #f04198b5, #64ecec, #9b30ff, #f566ad, #00ffff, #9b30ff);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: neonBorder 5s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-sizing: border-box;
+}
 
-  /* Animación del borde */
-  @keyframes neonBorder {
-    0% {
-      background-position: 0% 50%;
-    }
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    50% {
-      background-position: 100% 50%;
-    }
+.btn-enter:hover {
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.7), 0 0 24px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
 
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Glow al pasar el mouse */
-  .btn-enter:hover {
-    box-shadow: 0 0 12px rgba(255, 105, 180, 0.7), 0 0 24px rgba(0, 255, 255, 0.5);
-    transform: translateY(-2px);
-  }
-
-  .btn-enter:active {
-    transform: translateY(0);
-    box-shadow: 0 0 6px rgba(255, 105, 180, 0.5), 0 0 12px rgba(0, 255, 255, 0.3);
-  }
-
-  /* Timeline */
-  .timeline.horizontal {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 2rem 1rem 3rem;
-    position: relative;
-    z-index: 1;
-
-    h2,
-    h3 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-
-    .timeline-container {
-      display: flex;
-      gap: 3rem;
-      border-left: none;
-      border-bottom: 3px solid #66ccff; // línea azul neon
-      padding-left: 0;
-      padding-bottom: 1rem;
-      position: relative;
-      min-width: 700px;
-    }
-
-    .evento {
-      position: relative;
-      flex: 0 0 245px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .circle {
-        width: 20px;
-        height: 20px;
-        background-color: #3399ff; // azul neón
-        border-radius: 50%;
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-      }
-
-      .content {
-        background: rgba(10, 10, 30, 0.8); // caja azul oscuro semi-transparente
-        padding: 1rem;
-        border: 2px solid #68cafc57;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0, 0, 255, 0.2);
-        text-align: center;
-
-        .year {
-          font-weight: bold;
-          color: #ffffff;
-          margin-bottom: 0.5rem;
-          font-size: 1.2rem;
-          display: block;
-        }
-
-        p {
-          margin: 0;
-          color: #bad6f2;
-          font-size: 1rem;
-          line-height: 1.4;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .timeline.horizontal .timeline-container {
-      min-width: 100%;
-      gap: 2rem;
-    }
-
-    .timeline.horizontal .evento {
-      flex: 0 0 180px;
-    }
-
-    .timeline.horizontal .evento .content {
-      font-size: 0.9rem;
-    }
-
-    .timeline.horizontal .evento .circle {
-      width: 16px;
-      height: 16px;
-      bottom: -10px;
-    }
-  }
+.btn-enter:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(255, 105, 180, 0.5), 0 0 12px rgba(0, 255, 255, 0.3);
+}
 
 
-  /* Fortalezas */
-  .fortalezas-rediseño {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
-  }
+/* Timeline */
+.timeline.horizontal {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+}
 
-  .fortalezas-rediseño h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #ffffff;
-  }
+.timeline.horizontal h2,
+.timeline.horizontal h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
 
-  .fortalezas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
+.timeline.horizontal .timeline-container {
+  display: flex;
+  gap: 3rem;
+  border-left: none;
+  border-bottom: 3px solid #00ffff; /* línea neón */
+  padding-left: 0;
+  padding-bottom: 1rem;
+  position: relative;
+  min-width: 700px;
+}
 
-    .fortaleza-card {
-      background: #111a2b;
-      border: 2px solid #66ccff;
-      border-radius: 16px;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      color: #cce0ff;
-      box-shadow: 0 3px 10px rgba(0, 102, 255, 0.2);
-      transition: all 0.3s;
+.timeline.horizontal .evento {
+  position: relative;
+  flex: 0 0 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      span {
-        font-size: 2rem;
-        display: block;
-        margin-bottom: 0.8rem;
-      }
+.timeline.horizontal .evento .circle {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #00ffff, #ff00ff); /* gradiente neón */
+  border-radius: 50%;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 2px #00ffff, 0 0 12px #ff00ff, 0 0 27px #00ffff; /* glow */
+}
 
-      p {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #f0f0f0;
-      }
+.timeline.horizontal .evento .content {
+  background: rgba(10, 10, 30, 0.9);
+  padding: 1rem;
+  border: 1px solid #00ffff46;
+  border-radius: 6px;
+  box-shadow: 0 0 2px #00ffff, 0 0 4px #ff00ff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-      &:hover {
-        transform: translateY(-5px);
-        border-color: #3399ff;
-        background: #001f3f;
-      }
-    }
-  }
+.timeline.horizontal .evento .content:hover {
+  transform: scale(1.05); /* animación al pasar el mouse */
+  box-shadow: 0 0 5px #ff00ff, 0 0 15px #00ffff, 0 0 25px #ff00ff;
+}
 
-  /* Objetivo profesional */
-  .objetivo-profesional {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
-  }
+.timeline.horizontal .evento .content .year {
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 2px #00ffff, 0 0 5px #ff00ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  display: block;
+}
 
-  .objetivo-profesional h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #f9f9f9;
-  }
+.timeline.horizontal .evento .content p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 
-  .objetivo-box {
-    background: #111a2b;
-    padding: 2rem;
-    border-left: 6px solid #66ccff;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 102, 255, 0.2);
-    text-align: justify;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #ffffff;
-    transition: transform 0.3s;
-  }
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline.horizontal .timeline-container { min-width: 100%; gap: 2rem; }
+  .timeline.horizontal .evento { flex: 0 0 180px; }
+  .timeline.horizontal .evento .content { font-size: 0.9rem; }
+  .timeline.horizontal .evento .circle { width: 16px; height: 16px; bottom: -10px; }
+}
 
-  .objetivo-box:hover {
-    transform: scale(1.01);
-    background: #001f3f;
-  }
+/* Fortalezas */
+.fortalezas-rediseño {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.fortalezas-rediseño h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #ffffff;
+  // text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; /* título con glow */
+}
+
+.fortalezas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.fortaleza-card {
+  position: relative; /* necesario para pseudo-elemento del borde */
+  background: #060f1f;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #cce0ff;
+  overflow: hidden; /* para que el borde no sobresalga */
+  cursor: default;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 2px #00ffff, 0 0 4px #ff00ff;
+}
+
+/* Pseudo-elemento para borde neón animado (igual que habilidades) */
+.fortaleza-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px; /* grosor del borde */
+  background: linear-gradient(45deg, #ff69b4, #00ffff, #9b30ff, #ff69b4, #00ffff, #9b30ff);
+  background-size: 600% 600%;
+  // z-index: -1;
+  animation: neonBorder 5s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-sizing: border-box;
+  pointer-events: none; /* para no bloquear clicks */
+}
+
+/* Animación del borde */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fortaleza-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.fortaleza-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+/* Efecto hover (solo levanta la tarjeta, borde siempre visible) */
+.fortaleza-card:hover {
+  transform: translateY(-5px);
+  background: #060132f8;
+}
+
+
+/* ---------------- Objetivo profesional ---------------- */
+.objetivo-profesional {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.objetivo-profesional h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #f9f9f9;
+}
+
+/* Caja con borde animado */
+.objetivo-box {
+  position: relative;
+  background: #111a2b;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 102, 255, 0.2);
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ffffff;
+  transition: transform 0.3s;
+  overflow: hidden; /* necesario para pseudo-elemento */
+}
+
+/* Borde izquierdo animado */
+.objetivo-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px; /* grosor del borde */
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 300% 300%;
+  animation: neonBorder 5s linear infinite;
+  z-index: 0; /* detrás del contenido */
+}
+
+/* Mantener texto por encima del pseudo-elemento */
+.objetivo-box * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación del borde */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover: ligero efecto */
+.objetivo-box:hover {
+  transform: scale(1.01);
+  background: #001f3f;
 }
