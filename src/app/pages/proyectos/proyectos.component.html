@@ -1,1 +1,20 @@
-<p>proyectos works!</p>
+<div class="portafolio-container">
+  <div class="portafolio">
+    <h2>🚀 Mis Proyectos</h2>
+
+    <!-- 🔹 Contenedor de cards -->
+    <div class="proyectos-grid">
+      <div class="card" *ngFor="let proyecto of proyectos">
+        <!-- Imagen del proyecto -->
+        <img [src]="proyecto.imagen" [alt]="proyecto.titulo">
+
+        <!-- Contenido -->
+        <div class="card-content">
+          <h3>{{ proyecto.titulo }}</h3>
+          <p>{{ proyecto.descripcion }}</p>
+          <a [href]="proyecto.link" target="_blank">Ver Proyecto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

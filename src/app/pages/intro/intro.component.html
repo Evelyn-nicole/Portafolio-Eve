@@ -20,7 +20,7 @@
           Aprendiz constante, resiliente y entusiasta, en busca de mi primera experiencia profesional en TI.
         </p>
 
-        <button class="btn-enter" [routerLink]="['/sobre-mi']">Explorar portafolio</button>
+        <button class="btn-enter" [routerLink]="['/proyectos']">Explorar portafolio</button>
       </div>
 
       <!-- Lado derecho: foto -->
@@ -33,7 +33,7 @@
 
 <!-- Sección de Habilidades separada -->
 <section class="habilidades-section" data-aos="fade-up">
-  <h2>SKILLS</h2>
+  <h2>Skills</h2>
   <div class="habilidades-grid uniform">
     <div class="habilidad" *ngFor="let item of habilidades; let i = index" data-aos="fade-up"
       [attr.data-aos-delay]="(i % 3) * 100">
