@@ -137,49 +137,88 @@ form {
     margin-top: -0.5rem;
 }
 
-/* Toast de éxito */
+// /* Toast de éxito */
+// .toast {
+//     position: fixed;
+//     bottom: 2rem;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     background: linear-gradient(90deg, #228706, #7ee312);
+//     box-shadow: 0 0 5px #37ff00, 0 0 15px #5dfb55;
+//     color: #ffffff;
+//     padding: 1rem 2rem;
+//     border-radius: 30px;
+//     font-weight: bold;
+//     font-size: 1rem;
+//     z-index: 2000;
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+//     animation: slideUp 1s ease forwards;
+// }
+
+// .cerrar-toast {
+//     margin-left: 1rem;
+//     cursor: pointer;
+//     font-weight: bold;
+//     font-size: 1.2rem;
+// }
+
+
+// /* Animación del toast */
+// @keyframes fadeIn {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(20px);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+
+// /* Responsive */
+// @media (max-width: 768px) {
+//     .contact-panel {
+//         width: 90%;
+//     }
+// }
+
+
 .toast {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #228706, #7ee312);
-    box-shadow: 0 0 5px #37ff00, 0 0 15px #5dfb55;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    font-weight: bold;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    animation: slideUp 0.5s ease forwards;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #22b90e; // azul oscuro
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeInOut 5s forwards;
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.toast-text p {
+  margin: 0;
 }
 
 .cerrar-toast {
-    margin-left: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-
-/* Animación del toast */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-panel {
-        width: 90%;
-    }
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
 }
