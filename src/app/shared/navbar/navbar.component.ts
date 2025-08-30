@@ -4,10 +4,20 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule],   // Esto permite usar routerLink en el HTML
+  imports: [RouterModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  menuAbierto = false;
 
+  // Alterna menú y overlay
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  // Cierra menú (para links y overlay)
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
 }

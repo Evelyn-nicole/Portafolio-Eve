@@ -1,11 +1,17 @@
 <nav class="navbar">
   <div class="logo">Evelyn Santibáñez S.</div>
 
-  
-  <ul class="nav-links">
-    <li><a routerLink="/">Inicio</a></li>
-    <li><a routerLink="/sobre-mi">Sobre mí</a></li>
-    <li><a href="/proyectos">Portafolio</a></li>
-    <!-- <li><a href="/contacto">Contacto</a></li> -->
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" [class.abierto]="menuAbierto">
+    <li><a routerLink="/" (click)="cerrarMenu()">Inicio</a></li>
+    <li><a routerLink="/sobre-mi" (click)="cerrarMenu()">Sobre mí</a></li>
+    <li><a routerLink="/proyectos" (click)="cerrarMenu()">Portafolio</a></li>
   </ul>
 </nav>
+
+<div class="nav-overlay" [class.visible]="menuAbierto" (click)="cerrarMenu()"></div>
