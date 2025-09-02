@@ -23,21 +23,27 @@
         formación continua. Creo en el aprendizaje constante, en la colaboración y en nunca dejar de intentar. Busco mi
         primera oportunidad en el mundo TI, motivada por aportar con compromiso, visión y muchas ganas de crecer.
       </p>
-     <br> 
-     <br>
+      <br>
+      <br>
       <div class="botones">
         <a class="btn-enter" href="/assets/cv.pdf" target="_blank">Ver CV</a>
         <a class="btn-enter" href="/assets/cv.pdf" download>Descargar CV</a>
       </div>
     </div>
+   
+    <div class="scroll-down" [class.hide]="!showScrollHint" (click)="scrollTo('skills')" aria-label="Bajar a Skills">
+      <span></span>
+      <span></span>
+    </div>
   </div>
 
+
   <!-- Timeline -->
-   <br>
-   <br>
-   <br>
-   <br>
-   
+  <br>
+  <br>
+  <br>
+  <br>
+
   <div class="timeline horizontal" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
     <h2>Linea de Tiempo</h2>
     <div class="timeline-container">
@@ -51,7 +57,7 @@
     </div>
   </div>
   <br>
-  
+
 
   <!-- Fortalezas -->
   <section class="fortalezas-rediseño" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">

@@ -40,11 +40,15 @@
 .intro-bg {
   position: relative;
   width: 100%;
-  height: auto; /* cambia 100vh por auto */
-  min-height: 80vh; /* suficiente para Intro */
+  height: 95vh;     /* 🔥 ocupa exactamente toda la pantalla */
   overflow: hidden;
-  background-color: rgba(17,16,16,0.6); /* fondo negro semitransparente por si tarda canvas */
+  background-color: rgba(17, 16, 16, 0.504);
+  display: flex;             /* opcional: centra verticalmente tu contenido */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 
 /* Overlay (texto y botón) */
@@ -58,7 +62,7 @@
   text-align: center;
   color: #ffffff;
   background-color: rgba(17, 16, 16, 0.6);
-  padding: 0 1.25rem;
+  // padding: 0 1.25rem;
   z-index: 2;
 }
 
@@ -199,7 +203,7 @@
   color: #ffffff;
   text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; /* título con glow */
   margin-bottom: 4rem;
-  margin-top: 2rem;
+  // margin-top: 1rem;
   font-size: 2.5rem;
 }
 
@@ -297,4 +301,54 @@
   .habilidad p {
     font-size: 0.8rem;
   }
+}
+
+
+
+
+/* Contenedor de las flechas */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;          /* siempre pegado abajo del intro */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Cada flecha (una “V” blanca) */
+.scroll-down span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+  opacity: 0.9;
+}
+
+/* Segunda flecha con delay para efecto cascada */
+.scroll-down span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+/* Animación flotante */
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(-45deg) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-45deg) translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+/* Ocultar cuando el usuario hace scroll */
+.scroll-down.hide {
+  display: none;
 }

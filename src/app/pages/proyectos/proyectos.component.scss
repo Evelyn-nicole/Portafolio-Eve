@@ -1,23 +1,147 @@
-/* 🎨 Sección general del portafolio */
+// /* 🎨 Sección general del portafolio */
+// .portafolio {
+//   max-width: 1100px;              
+//   margin: 2rem auto;              
+//   padding: 0 2rem;                
+//   text-align: center;             
+
+//   /* Estilo del título */
+//   h2 {
+//     font-size: 2.5rem;
+//     margin-bottom: 3rem;
+//     color: #ffffff;               
+//     // text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; 
+//   }
+// }
+
+// /* 🌀 Fondo animado de la sección */
+// .portafolio-container {
+//   position: relative;               /* Necesario para que funcione el overlay */
+//   min-height: 100vh;                
+//   padding: 4rem 2rem;
+//   background: linear-gradient(
+//     110deg,
+//     #ff69b4, 
+//     #00ffff, 
+//     #9b30ff, 
+//     #ff69b4, 
+//     #00ffffd8, 
+//     #9b30ff
+//   );
+//   background-size: 400% 400%;       
+//   animation: gradientMove 16s ease infinite;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;  
+//   z-index: 0;                       /* Asegura que el overlay quede sobre esto */
+// }
+
+// /* 🌑 Overlay negro semitransparente */
+// .portafolio-container::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.679);  /* Negro con transparencia */
+//   z-index: 1;                       /* Queda sobre el fondo */
+// }
+
+// /* ✅ Forzamos que el contenido quede encima del overlay */
+// .portafolio-container > * {
+//   position: relative;
+//   z-index: 2;
+// }
+
+// /* Animación suave del fondo */
+// @keyframes gradientMove {
+//   0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// }
+
+// /* 📐 Grid responsivo para las cards */
+// .proyectos-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+//   gap: 2rem;                          
+//   width: 100%;
+//   max-width: 1100px;                  
+// }
+
+// /* 🃏 Estilos de cada card */
+// .card {
+//   background: #111a2b;               
+//   border-radius: 16px;               
+//   overflow: hidden;                  
+//   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.53);
+//   transition: transform 0.3s, box-shadow 0.3s;
+
+//   &:hover {
+//     transform: translateY(-6px) scale(1.02);
+//     box-shadow: 0 5px 25px rgba(0, 255, 255, 0.625);
+//   }
+
+//   img {
+//     width: 100%;
+//     height: 180px;
+//     object-fit: cover;               
+//   }
+
+//   .card-content {
+//     padding: 1.5rem;
+//     color: #fff;
+//     text-align: left;
+
+//     h3 {
+//       font-size: 1.6rem;
+//       margin-bottom: 0.5rem;
+//       color: #00ffff;                 
+//       text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+//     }
+
+//     p {
+//       font-size: 1.1rem;
+//       margin-bottom: 1rem;
+//       color: #ddd;
+//     }
+
+//     a {
+//       display: inline-block;
+//       padding: 0.5rem 1rem;
+//       background: linear-gradient(90deg, #00ffff, #ff00ff);
+//       border-radius: 8px;
+//       color: #020847;
+//       font-weight: bold;
+//       text-decoration: none;
+//       transition: background 0.3s;
+
+//       &:hover {
+//         background: linear-gradient(90deg, #ff00ff, #00ffff);
+//       }
+//     }
+//   }
+// }
+
+/* ---------------- PORTAFOLIO ---------------- */
 .portafolio {
   max-width: 1100px;              
   margin: 2rem auto;              
   padding: 0 2rem;                
-  text-align: center;             
+  text-align: center;
 
-  /* Estilo del título */
   h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #ffffff;               
-    // text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff; 
+    color: #ffffff;
   }
 }
 
-/* 🌀 Fondo animado de la sección */
+/* Fondo animado de la sección */
 .portafolio-container {
-  position: relative;               /* Necesario para que funcione el overlay */
-  min-height: 100vh;                
+  position: relative;
+  min-height: 100vh;
   padding: 4rem 2rem;
   background: linear-gradient(
     110deg,
@@ -33,10 +157,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;  
-  z-index: 0;                       /* Asegura que el overlay quede sobre esto */
+  z-index: 0;
 }
 
-/* 🌑 Overlay negro semitransparente */
+/* Overlay negro semitransparente */
 .portafolio-container::before {
   content: "";
   position: absolute;
@@ -44,74 +168,74 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.679);  /* Negro con transparencia */
-  z-index: 1;                       /* Queda sobre el fondo */
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 1;
 }
 
-/* ✅ Forzamos que el contenido quede encima del overlay */
+/* Contenido sobre overlay */
 .portafolio-container > * {
   position: relative;
   z-index: 2;
 }
 
-/* Animación suave del fondo */
+/* Animación del fondo */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* 📐 Grid responsivo para las cards */
+/* Grid responsivo para cards */
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 2rem;                          
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;                  
+  max-width: 1100px;
 }
 
-/* 🃏 Estilos de cada card */
+/* Cards */
 .card {
-  background: #111a2b;               
-  border-radius: 16px;               
-  overflow: hidden;                  
+  background: #111a2b;
+  border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.53);
   transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 5px 25px rgba(0, 255, 255, 0.625);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 25px rgba(0, 255, 255, 0.6);
   }
 
   img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;               
+    height: 160px;
+    object-fit: cover;
   }
 
   .card-content {
-    padding: 1.5rem;
+    padding: 1rem;
     color: #fff;
     text-align: left;
 
     h3 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       margin-bottom: 0.5rem;
-      color: #00ffff;                 
+      color: #00ffff;
       text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
       color: #ddd;
     }
 
     a {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       background: linear-gradient(90deg, #00ffff, #ff00ff);
-      border-radius: 8px;
+      border-radius: 6px;
       color: #020847;
       font-weight: bold;
       text-decoration: none;
@@ -120,6 +244,137 @@
       &:hover {
         background: linear-gradient(90deg, #ff00ff, #00ffff);
       }
+    }
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Pantallas medianas (600px–800px) */
+@media (min-width: 600px) and (max-width: 800px) {
+  .portafolio {
+    padding: 0 1rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .proyectos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+    gap: 1.2rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+  }
+
+  .card-content a {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Pantallas grandes (801px–1000px) */
+@media (min-width: 801px) and (max-width: 1000px) {
+  .proyectos-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    gap: 1.5rem;
+  }
+
+  .card img {
+    height: 155px;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .card-content a {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas pequeñas (600px–480px) */
+@media (max-width: 600px) {
+  .portafolio {
+    padding: 0 0.8rem;
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr; /* 1 columna */
+    gap: 0.9rem;
+  }
+
+  .card img {
+    height: 130px;
+  }
+
+  .card-content {
+    padding: 0.7rem;
+
+    h3 {
+      font-size: 1.15rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    a {
+      padding: 0.3rem 0.65rem;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* Pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .portafolio h2 {
+    font-size: 1.8rem;
+  }
+
+  .proyectos-grid {
+    gap: 0.8rem;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  .card-content {
+    padding: 0.6rem;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+
+    a {
+      padding: 0.25rem 0.55rem;
+      font-size: 0.8rem;
     }
   }
 }

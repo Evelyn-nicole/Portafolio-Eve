@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,12 +6,13 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit, AfterViewInit {
-  nombrePrincipal = 'DEVELOPER JUNIOR';
+  nombrePrincipal = 'DEVELOPER noseq';
   nombreChars: string[] = [];
-
+  showScrollHint = true;
+  private readonly NAV_HEIGHT_PX = 40; // altura navbar fijo
 
   habilidades = [
     { nombre: 'Python', icono: 'assets/icons/python.svg' },
@@ -37,7 +37,9 @@ export class IntroComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Separar las letras, dejando los espacios como string normal
-    this.nombreChars = this.nombrePrincipal.split('').map(ch => ch === ' ' ? ' ' : ch);
+    this.nombreChars = this.nombrePrincipal
+      .split('')
+      .map((ch) => (ch === ' ' ? ' ' : ch));
     // this.startTypingLoop(); // Subtitulo maquina de escribir
   }
 
@@ -45,7 +47,24 @@ export class IntroComponent implements OnInit, AfterViewInit {
     this.initMatrix();
   }
 
+  @HostListener('window:scroll')
+  onScroll() {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    this.showScrollHint = y < 60; // desaparece al scrollear
+  }
 
+  scrollTo(targetId: string) {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.scrollY - this.NAV_HEIGHT_PX;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+
+
+
+  
   // ---------------- MATRIX AZUL ----------------
   private initMatrix() {
     const canvas = document.getElementById('matrix') as HTMLCanvasElement;
@@ -68,7 +87,9 @@ export class IntroComponent implements OnInit, AfterViewInit {
       ctx.font = '20px monospace';
 
       for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        const text = characters.charAt(
+          Math.floor(Math.random() * characters.length)
+        );
         ctx.fillText(text, i * 20, drops[i] * 20);
 
         if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
@@ -87,4 +108,3 @@ export class IntroComponent implements OnInit, AfterViewInit {
     });
   }
 }
-

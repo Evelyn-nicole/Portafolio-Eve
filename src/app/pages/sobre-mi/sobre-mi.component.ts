@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import * as AOS from 'aos';
@@ -12,6 +12,9 @@ import 'aos/dist/aos.css';
   styleUrls: ['./sobre-mi.component.scss']
 })
 export class SobreMiComponent implements AfterViewInit {
+  showScrollHint = true;
+  private readonly NAV_HEIGHT_PX = 40; // altura navbar fijo
+
   timeline = [
     { year: 'Año 2021', text: 'Bootcamp de desarrollo (320h), base en tecnologías front y back.' },
     { year: 'Año 2022', text: 'Decisión estratégica: transitar 100% hacia el área TI.' },
@@ -37,7 +40,7 @@ export class SobreMiComponent implements AfterViewInit {
     setTimeout(() => AOS.refresh(), 500);
 
 
-    
+
     // -------------------------
     // Canvas Matrix estático
     const canvas = document.getElementById('matrix-canvas') as HTMLCanvasElement;
@@ -62,5 +65,19 @@ export class SobreMiComponent implements AfterViewInit {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     });
+  }
+
+    @HostListener('window:scroll')
+  onScroll() {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    this.showScrollHint = y < 60; // desaparece al scrollear
+  }
+
+  scrollTo(targetId: string) {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.scrollY - this.NAV_HEIGHT_PX;
+    window.scrollTo({ top, behavior: 'smooth' });
   }
 }
