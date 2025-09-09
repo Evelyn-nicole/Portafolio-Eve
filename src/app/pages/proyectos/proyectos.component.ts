@@ -19,9 +19,10 @@ export class ProyectosComponent {
   proyectos = [
     {
       titulo: 'Gestión de Productos',
-      descripcion: 'Aplicación CRUD hecha con Angular + NestJS + PostgreSQL.',
+      descripcion: 'Sistema de gestión de productos que permite agregar, editar, eliminar y filtrar productos. Incluye un resumen visual del stock, alertas para productos con bajo inventario y un panel interactivo para visualizar información en tiempo real. Ideal para pequeñas tiendas o inventarios internos.',
+      tecnologias: 'Angular, TypeScript, Bootstrap, RxJS./// NestJS, TypeORM, PostgreSQL./// Validaciones con class-validator, consumo de API REST, manejo de CORS.',
       imagen: 'assets/proyectos/22.jfif',
-      link: 'https://github.com/tu-repo/productos'
+      link: 'https://github.com/Evelyn-nicole/Panel-Gestion-de-Productos.git'
     },
     {
       titulo: 'Portafolio Web',
