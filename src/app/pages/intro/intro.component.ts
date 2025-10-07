@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit, AfterViewInit {
-  nombrePrincipal = 'DEVELOPER noseq';
+  nombrePrincipal = 'Portafolio';
   nombreChars: string[] = [];
   showScrollHint = true;
   private readonly NAV_HEIGHT_PX = 40; // altura navbar fijo
